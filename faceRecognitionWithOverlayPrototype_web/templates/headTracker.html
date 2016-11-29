@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hello World</title>
+</head>
+<body>
+{% load static %}
+
+<script type="text/javascript" src="{% static "headtrackr.js" %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+<div class="element" style="border-radius: 50%; background-color: red; width: 10px; height: 10px"></div>
+<canvas id="inputCanvas" width="320" height="240" style="display:none"></canvas>
+<video id="inputVideo" autoplay loop></video>
+
+
+<script type="text/javascript">
+    var videoInput = document.getElementById('inputVideo');
+    var canvasInput = document.getElementById('inputCanvas');
+
+    var htracker = new headtrackr.Tracker({ui: false});
+    htracker.init(videoInput, canvasInput);
+    htracker.start();
+
+
+    document.addEventListener('facetrackingEvent',
+            function (event) {
+                //console.log(event.x, "-", event.y);
+                //console.log(event.angle)
+                $('.element').css({
+                    'position': 'absolute',
+                    'background-color': 'yellow',
+                    'left': event.x,
+                    'top': event.y
+                });
+
+            }
+    );
+</script>
+<h3>Example of: <a href="http://www.auduno.com/headtrackr/documentation/reference.html">headtracker.js</a> following the
+    center of the face</h3>
+<hr>
+
+</body>
+</html>

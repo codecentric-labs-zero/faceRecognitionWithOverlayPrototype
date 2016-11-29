@@ -1,10 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-def hello_world(request):
-    return render(request, 'base.html', {'greeting': 'hello world'})
+
+def headTracker(request):
+    return render(request, 'headTracker.html')
 
 
-def ping(request):
-    return HttpResponse("I am alive.", content_type="text/plain")
+def trackingjs(request):
+    return render(request, 'trackingjs.html')
 
+
+def index(request):
+    return render(request, 'index.html')

@@ -3,6 +3,7 @@ from faceRecognitionWithOverlayPrototype_web import views
 
 # patterns here are prefixed with 'web/'
 urlpatterns = [
-    url(r'^ping$', views.ping),
-    url(r'^$', views.hello_world)
+    url(r'^$', views.index),
+    url(r'^headTracker', views.headTracker),
+    url(r'^trackingjs', views.trackingjs)
     ]
