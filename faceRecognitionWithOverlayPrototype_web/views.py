@@ -10,5 +10,10 @@ def trackingjs(request):
     return render(request, 'trackingjs.html')
 
 
+def clmTrackr(request):
+    return render(request, 'clmTrackr.html')
+
+
+
 def index(request):
     return render(request, 'index.html')

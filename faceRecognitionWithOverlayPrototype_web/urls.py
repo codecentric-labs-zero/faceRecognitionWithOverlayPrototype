@@ -5,5 +5,6 @@ from faceRecognitionWithOverlayPrototype_web import views
 urlpatterns = [
     url(r'^$', views.index),
     url(r'^headTracker', views.headTracker),
-    url(r'^trackingjs', views.trackingjs)
+    url(r'^trackingjs', views.trackingjs),
+    url(r'^clmTrackr', views.clmTrackr)
     ]
