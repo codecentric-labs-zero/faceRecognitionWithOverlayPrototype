@@ -211,12 +211,14 @@
             //ctrack.draw(overlay);
             //console.log(positions[23], positions[28]);
             var glassesWidth = (positions[14][0] - positions[0][0])*0.95;
+            var angleDeg = Math.atan2(positions[32][1] - positions[27][1], positions[32][0] - positions[27][0]) * 180 / Math.PI;
             $('#glasses').css({
                 'display': 'block',
                 'position': 'absolute',
                 'left': 400 - glassesWidth - positions[0][0],
-                'top': positions[0][1] - 20,
-                'width': glassesWidth
+                'top': Math.min(positions[20][1], positions[16][1]),
+                'width': glassesWidth,
+                'transform': 'rotate(' + -angleDeg + 'deg)'
             });
         }
     }
